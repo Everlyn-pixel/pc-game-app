@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Cyber Adventure",
+    "genre": "Action",
+    "releaseDate": "2023-01-15",
+    "developer": "Cyber Studios",
+    "likes": 0,
+    "comments": []
+  },
+  {
+    "id": 2,
+    "name": "Mystic Quest",
+    "genre": "RPG",
+    "releaseDate": "2022-11-10",
+    "developer": "Mystic Games",
+    "likes": 0,
+    "comments": []
+  },
+  {
+    "id": 3,
+    "name": "Racing Thunder",
+    "genre": "Racing",
+    "releaseDate": "2024-03-01",
+    "developer": "Speedy Devs",
+    "likes": 0,
+    "comments": []
+  }
+]
