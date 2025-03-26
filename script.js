@@ -1,34 +1,23 @@
-const API_URL = "https://example.com/api/games"; // Replace with your API endpoint
+const API_URL = "games.json"; // Replace with your API endpoint if available
 
 document.addEventListener("DOMContentLoaded", async () => {
   const gamesList = document.getElementById("games-list");
 
-  // Fetch games from the API or fallback to local JSON
+  // Fetch games from the API or local JSON file
   async function fetchGames() {
     try {
       const response = await fetch(API_URL);
       if (!response.ok) throw new Error("Failed to fetch games");
       return await response.json();
     } catch (error) {
-      console.error("Error fetching games from API:", error);
-      return loadFromLocalStorage() || []; // Fallback to localStorage if API fails
+      console.error("Error fetching games:", error);
+      return [];
     }
-  }
-
-  // Save games data to localStorage
-  function saveToLocalStorage(games) {
-    localStorage.setItem("gamesData", JSON.stringify(games));
-  }
-
-  // Load games data from localStorage
-  function loadFromLocalStorage() {
-    const savedGames = localStorage.getItem("gamesData");
-    return savedGames ? JSON.parse(savedGames) : null;
   }
 
   // Render games
   async function renderGames() {
-    let games = await fetchGames();
+    const games = await fetchGames();
     gamesList.innerHTML = ""; // Clear the list
 
     games.forEach((game) => {
@@ -51,7 +40,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Like button functionality
       gameCard.querySelector(".like-btn").addEventListener("click", () => {
         game.likes = (game.likes || 0) + 1;
-        saveToLocalStorage(games); // Save updated data to localStorage
         gameCard.querySelector(".like-btn").textContent = `Like (${game.likes})`;
       });
 
@@ -61,7 +49,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (comment) {
           game.comments = game.comments || [];
           game.comments.push(comment);
-          saveToLocalStorage(games); // Save updated data to localStorage
           gameCard.querySelector(".comments").innerHTML = game.comments
             .map((c) => `<p>${c}</p>`)
             .join("");
