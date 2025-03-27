@@ -2,7 +2,10 @@
 
 A web application to showcase PC games, allowing users to view, like, comment, and order games.
 
+---
+
 ## Features
+<<<<<<< HEAD
 - View a variety of PC games.
 - Like, comment, and order games.
 - Responsive design for all devices.
@@ -17,16 +20,33 @@ A web application to showcase PC games, allowing users to view, like, comment, a
 A web application to showcase PC games, allowing users to view, like, comment, and order games.
 
 ## Features
-- View a variety of PC games dynamically loaded from a JSON file.
-- Like games to show appreciation.
-- Add comments to games.
-- Order games with a simple button click.
+- View a variety of PC games.
+- Like, comment, and order games.
 - Responsive design for all devices.
+=======
+1. **View Games**:
+   - Dynamically displays a variety of PC games fetched from a JSON file.
+   - Each game includes details such as name, genre, release date, and developer.
 
-## Technologies Used
-- **HTML**: For structuring the web application.
-- **CSS**: For styling the application.
-- **JavaScript**: For dynamic functionality and DOM manipulation.
-- **JSON**: For storing and fetching game data.
+2. **Like Games**:
+   - Users can like games to show appreciation.
+   - The like count updates dynamically.
 
-## Project Structure
+3. **Comment on Games**:
+   - Users can add comments to games.
+   - Comments are displayed below each game.
+
+4. **Order Games**:
+   - Users can click the "Order" button to simulate ordering a game.
+   - Displays a confirmation alert for the order.
+
+5. **Responsive Design**:
+   - The app is designed to work on all devices, including desktops, tablets, and mobile phones.
+
+---
+>>>>>>> d05c26b ( modified my README.md)
+
+## How to Run Locally
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/pc-games-app.git
